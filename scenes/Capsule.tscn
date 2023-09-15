@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/Capsule.gd" type="Script" id=1]
+[ext_resource path="res://sprites/GUI/HEALTH_FILL.png" type="Texture" id=2]
+[ext_resource path="res://sprites/GUI/OXYGEN_fill.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Sprites/capsule/capsule_craft.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Sprites/capsule/capsule.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 70.7473
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 32, 4 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 4 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "crafting"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("capsule:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 10.6754, -25.6585 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 35.165
+
+[node name="Capsule" type="StaticBody2D" groups=["target"]]
+pause_mode = 2
+position = Vector2( 0, 2 )
+z_index = 30
+constant_linear_velocity = Vector2( 100, 0 )
+script = ExtResource( 1 )
+
+[node name="OxygenArea" type="Area2D" parent="." groups=["no_ox", "without"]]
+pause_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OxygenArea"]
+pause_mode = 2
+visible = false
+shape = SubResource( 1 )
+
+[node name="REload_oxygen" type="Timer" parent="."]
+pause_mode = 1
+one_shot = true
+
+[node name="Health" type="ProgressBar" parent="."]
+visible = false
+margin_left = 30.0
+margin_top = -55.0
+margin_right = 89.0
+margin_bottom = -46.0
+rect_rotation = 180.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+max_value = 150.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="capsule" type="Sprite" parent="."]
+rotation = -1.0472
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="capsule_craft" type="Sprite" parent="."]
+position = Vector2( 0, 5.673 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/crafting = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.110878, 5.90921 )
+shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="OxygenArea" to="." method="_on_OxygenArea_body_entered"]
+[connection signal="body_exited" from="OxygenArea" to="." method="_on_OxygenArea_body_exited"]
+[connection signal="timeout" from="REload_oxygen" to="." method="_on_REloadoxygen_timeout"]

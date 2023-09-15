@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/Settings.gd" type="Script" id=2]
+[ext_resource path="res://sprites/GUI/Backs/BG1.png" type="Texture" id=3]
+[ext_resource path="res://fonts/StarseedPro.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/GUI/Theme/MainTheme.tres" type="Theme" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+anchor_left = 0.815157
+anchor_top = 0.0532879
+anchor_right = 0.981532
+anchor_bottom = 0.118103
+margin_left = -0.560059
+focus_mode = 0
+custom_fonts/font = SubResource( 6 )
+enabled_focus_mode = 0
+text = "Вернуться"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CheckBoxes" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -462.0
+margin_top = -194.0
+margin_right = 462.0
+margin_bottom = 194.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="capsule_health" type="CheckBox" parent="CheckBoxes"]
+margin_right = 1191.0
+margin_bottom = 51.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+pressed = true
+enabled_focus_mode = 0
+text = "  Показывать здоровье капсулы"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemies_health" type="CheckBox" parent="CheckBoxes"]
+margin_top = 55.0
+margin_right = 1191.0
+margin_bottom = 106.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+disabled = true
+enabled_focus_mode = 0
+text = "  Показывать здоровье врагов (тест, не работает)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cheats" type="CheckBox" parent="CheckBoxes"]
+margin_top = 110.0
+margin_right = 1191.0
+margin_bottom = 161.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "  Включить читы (f3, f4)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numbers" type="CheckBox" parent="CheckBoxes"]
+margin_top = 165.0
+margin_right = 1191.0
+margin_bottom = 216.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+disabled = true
+enabled_focus_mode = 0
+text = "  Числовые показатели рядом с прогрессбарами (тест, не работает)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="is_progressbars" type="CheckBox" parent="CheckBoxes"]
+margin_top = 220.0
+margin_right = 1191.0
+margin_bottom = 271.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "  Выключить прогрессбары"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="is_waves" type="CheckBox" parent="CheckBoxes"]
+margin_top = 275.0
+margin_right = 1191.0
+margin_bottom = 326.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "  Выключить счетчик волн"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="is_particles" type="CheckBox" parent="CheckBoxes"]
+margin_top = 330.0
+margin_right = 1191.0
+margin_bottom = 381.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "  Выключить частицы"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartAnimation" type="CheckBox" parent="CheckBoxes"]
+margin_top = 385.0
+margin_right = 1191.0
+margin_bottom = 436.0
+focus_mode = 0
+theme = ExtResource( 5 )
+custom_constants/hseparation = 40
+custom_fonts/font = SubResource( 5 )
+pressed = true
+enabled_focus_mode = 0
+text = "Стартовая анимация"
+
+[node name="VolumeBox" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.17
+anchor_right = 0.5
+anchor_bottom = 0.17
+margin_left = -402.5
+margin_right = 402.5
+margin_bottom = 60.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="volume_l" type="Label" parent="VolumeBox"]
+margin_top = 10.0
+margin_right = 254.0
+margin_bottom = 49.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 3 )
+text = "Общая громкость:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volume" type="HSlider" parent="VolumeBox"]
+margin_left = 279.0
+margin_right = 805.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+theme = ExtResource( 5 )
+min_value = -50.0
+max_value = 10.0
+value = 10.0
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

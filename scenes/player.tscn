@@ -1,0 +1,340 @@
+[gd_scene load_steps=73 format=2]
+
+[ext_resource path="res://sprites/Sprites/Astronaut/down/astronaut4.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Sprites/as/chelik_aseprite3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Sprites/as/chelik_aseprite1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Sprites/as/chelik_aseprite2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Sprites/as/hand.png" type="Texture" id=7]
+[ext_resource path="res://sprites/GUI/RELOAD_bg.png" type="Texture" id=8]
+[ext_resource path="res://sprites/GUI/OXYGEN_fill.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Sprites/Astronaut/up/astronaut4.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Sprites/Astronaut/up/astronaut3.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Sprites/Astronaut/up/astronaut1.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Sprites/Astronaut/up/astronaut2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left1/astronaut4.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left2/astronaut4.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left2/astronaut1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left1/astronaut2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left1/astronaut1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Sprites/Astronaut/down/astronaut1.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left2/astronaut3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left2/astronaut2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Sprites/Astronaut/down/astronaut2.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Sprites/Astronaut/down/astronaut3.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Sprites/Astronaut/Left1/astronaut3.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Sprites/Astronaut/arm/Astronaut_arm.png" type="Texture" id=25]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut5.png" type="Texture" id=26]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut1.png" type="Texture" id=27]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut2.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut4.png" type="Texture" id=29]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut6.png" type="Texture" id=30]
+[ext_resource path="res://sprites/Sprites/Astronaut/down_run/astronaut3.png" type="Texture" id=31]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut5.png" type="Texture" id=32]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut5.png" type="Texture" id=33]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut2.png" type="Texture" id=34]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut1.png" type="Texture" id=35]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut6.png" type="Texture" id=36]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut1.png" type="Texture" id=37]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut4.png" type="Texture" id=38]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut6.png" type="Texture" id=39]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut4.png" type="Texture" id=40]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut3.png" type="Texture" id=41]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut2.png" type="Texture" id=42]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut6.png" type="Texture" id=43]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut1.png" type="Texture" id=44]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut2.png" type="Texture" id=45]
+[ext_resource path="res://sprites/Sprites/Astronaut/left1_run/astronaut4.png" type="Texture" id=46]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut5.png" type="Texture" id=47]
+[ext_resource path="res://sprites/Sprites/Astronaut/up_run/astronaut3.png" type="Texture" id=48]
+[ext_resource path="res://sprites/Sprites/Astronaut/left2_run/astronaut3.png" type="Texture" id=49]
+[ext_resource path="res://sprites/Sprites/ambient/gradientcircle.png" type="Texture" id=50]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.8605, 54.2773 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+} ]
+
+[sub_resource type="Curve" id=3]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 202.909 ), 0.0, 0.0, 0, 0, Vector2( 1, -196.364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.981445, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+max_value = 100.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 23.5227 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -600, 0 )
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 3000.0
+radial_accel_random = 1.0
+damping_curve = SubResource( 8 )
+scale = 5.0
+scale_random = 0.3
+color_ramp = SubResource( 6 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 59.3529
+height = 0.0
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 32, 4 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 32, 4 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "down_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "down_run",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "left1_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 34 ), ExtResource( 41 ), ExtResource( 46 ), ExtResource( 33 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "left1_run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "left2_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 42 ), ExtResource( 49 ), ExtResource( 40 ), ExtResource( 47 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "left2_run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "up_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 38 ), ExtResource( 32 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "up_run",
+"speed": 6.0
+} ]
+
+[sub_resource type="Curve" id=15]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 56.9052 ), 0.0, 0.0, 0, 0, Vector2( 1, -47.8221 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="Curve" id=17]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -47.6871 ), 0.0, 0.0, 0, 0, Vector2( 1, 70.1311 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=18]
+curve = SubResource( 17 )
+
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0, 0.50838, 0.994413 )
+colors = PoolColorArray( 1, 0.519409, 0.0078125, 1, 1, 0.84375, 0, 1, 0.798826, 0.60497, 0.355727, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="Curve" id=21]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 106.833 ), 0.0, 0.0, 0, 0, Vector2( 1, -27.7124 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 21 )
+
+[sub_resource type="Curve" id=23]
+_data = [ Vector2( 0, 1 ), 0.0, 1.54566, 0, 0, Vector2( 1, 0.276958 ), -2.4014, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=24]
+curve = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+lifetime_randomness = 0.5
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+gravity = Vector3( 0, -150, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 0.1
+angular_velocity = 5.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 18 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 20.0
+linear_accel_random = 1.0
+linear_accel_curve = SubResource( 22 )
+angle = 1.0
+angle_random = 1.0
+angle_curve = SubResource( 16 )
+scale = 4.0
+scale_random = 0.6
+scale_curve = SubResource( 24 )
+color = Color( 1, 0.843137, 0, 1 )
+color_ramp = SubResource( 20 )
+
+[node name="player" type="KinematicBody2D" groups=["player", "target"]]
+pause_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+pause_mode = 1
+position = Vector2( 0, -32 )
+shape = SubResource( 1 )
+
+[node name="Oxygen_timer" type="Timer" parent="."]
+pause_mode = 1
+autostart = true
+
+[node name="Reload_time" type="Timer" parent="."]
+pause_mode = 1
+one_shot = true
+
+[node name="AfterShot" type="Timer" parent="."]
+pause_mode = 1
+wait_time = 0.2
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+pause_mode = 1
+visible = false
+position = Vector2( 0, -32 )
+scale = Vector2( 4.02424, 4.31624 )
+frames = SubResource( 2 )
+animation = "run"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+pause_mode = 1
+visible = false
+position = Vector2( 0, -45 )
+scale = Vector2( 0.377524, 1 )
+color = Color( 0, 0, 0, 0 )
+antialiased = true
+polygon = PoolVector2Array( -8, 0, -8, -16, 8, -16, 8, 0 )
+
+[node name="hand" type="Sprite" parent="Polygon2D"]
+pause_mode = 1
+rotation = 3.14159
+scale = Vector2( 4.39212, 1.5398 )
+z_index = -1
+texture = ExtResource( 7 )
+offset = Vector2( 0, 18.5 )
+
+[node name="Particles2D" type="Particles2D" parent="Polygon2D"]
+position = Vector2( -8, -57.312 )
+emitting = false
+amount = 50
+lifetime = 0.2
+one_shot = true
+process_material = SubResource( 9 )
+
+[node name="grab_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grab_zone"]
+visible = false
+position = Vector2( 0.306656, -37.2924 )
+shape = SubResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 0.45, 0.45 )
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+
+[node name="queue_time" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Reload_and_uses" type="ProgressBar" parent="."]
+visible = false
+margin_left = -48.0
+margin_top = -128.0
+margin_right = 48.0
+margin_bottom = -114.0
+custom_styles/fg = SubResource( 11 )
+custom_styles/bg = SubResource( 12 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0286255, -32.0675 )
+scale = Vector2( 4, 4.5 )
+frames = SubResource( 13 )
+animation = "up_run"
+
+[node name="Astronaut_arm" type="Sprite" parent="AnimatedSprite2"]
+position = Vector2( -7.529, 7.969 )
+texture = ExtResource( 25 )
+
+[node name="Astronaut_arm2" type="Sprite" parent="AnimatedSprite2"]
+position = Vector2( 7.464, 7.988 )
+texture = ExtResource( 25 )
+
+[node name="Particles2D" type="Particles2D" parent="AnimatedSprite2/Astronaut_arm2"]
+position = Vector2( 6.004, -1.954 )
+emitting = false
+amount = 100
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.1
+local_coords = false
+process_material = SubResource( 14 )
+
+[node name="Light2D" type="Light2D" parent="."]
+modulate = Color( 1, 1, 1, 0.00784314 )
+position = Vector2( 0, -24 )
+enabled = false
+texture = ExtResource( 50 )
+texture_scale = 1.54
+energy = 0.5
+
+[connection signal="timeout" from="Reload_time" to="." method="_on_Reload_time_timeout"]
+[connection signal="timeout" from="AfterShot" to="." method="_on_AfterShot_timeout"]
+[connection signal="body_entered" from="grab_zone" to="." method="_on_grab_zone_body_entered"]
+[connection signal="body_exited" from="grab_zone" to="." method="_on_grab_zone_body_exited"]
+[connection signal="timeout" from="queue_time" to="." method="_on_queue_time_timeout"]

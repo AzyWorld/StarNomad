@@ -1,0 +1,628 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://sprites/GUI/Theme/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Pause.gd" type="Script" id=2]
+[ext_resource path="res://scripts/INV.gd" type="Script" id=3]
+[ext_resource path="res://sprites/GUI/Progressbar/ProgressbarFill_default.png" type="Texture" id=4]
+[ext_resource path="res://sprites/GUI/Progressbar/ProgressbarBg_default.png" type="Texture" id=5]
+[ext_resource path="res://sprites/icons/doshik.png" type="Texture" id=6]
+[ext_resource path="res://sprites/icons/famas.png" type="Texture" id=7]
+[ext_resource path="res://sprites/icons/astronaut-helmet.png" type="Texture" id=8]
+[ext_resource path="res://sprites/icons/PP.png" type="Texture" id=9]
+[ext_resource path="res://sprites/icons/wooden-crate.png" type="Texture" id=10]
+[ext_resource path="res://sprites/icons/REvolver.png" type="Texture" id=11]
+[ext_resource path="res://sprites/icons/Ak-47.png" type="Texture" id=12]
+[ext_resource path="res://sprites/icons/UZI.png" type="Texture" id=13]
+[ext_resource path="res://sprites/icons/turret.png" type="Texture" id=14]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=15]
+[ext_resource path="res://fonts/19783.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://fonts/StarseedPro.otf" type="DynamicFontData" id=17]
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 16 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.184314, 0.184314, 0.184314, 0.427451 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=25]
+size = 40
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 110
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "little"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Описание", "Не хватает ресурсов!", "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.419608, 0.419608, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=15]
+size = 25
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0, 0, 0, 0.415686 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 50
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 120
+font_data = ExtResource( 16 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="item" type="TextureRect" parent="." groups=["hide"]]
+anchor_left = 0.067
+anchor_top = 0.872
+anchor_right = 0.067
+anchor_bottom = 0.872
+margin_left = -33.44
+margin_top = -33.9599
+margin_right = 14.56
+margin_bottom = 14.3601
+rect_scale = Vector2( 1.4, 1.4 )
+rect_pivot_offset = Vector2( 24, 24 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="strela" type="TextureRect" parent="." groups=["hide"]]
+anchor_left = 0.066
+anchor_top = 0.798
+anchor_right = 0.066
+anchor_bottom = 0.798
+margin_left = -16.38
+margin_top = -18.24
+margin_right = 7.94
+margin_bottom = 7.0799
+rect_min_size = Vector2( 24, 24 )
+rect_scale = Vector2( 1.4, 1.4 )
+rect_pivot_offset = Vector2( 12, 12 )
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="strela2" type="TextureRect" parent="." groups=["hide"]]
+anchor_left = 0.066
+anchor_top = 0.945
+anchor_right = 0.066
+anchor_bottom = 0.945
+margin_left = -16.38
+margin_top = -17.0001
+margin_right = 7.94
+margin_bottom = 6.99988
+rect_min_size = Vector2( 24, 24 )
+rect_scale = Vector2( 1.4, 1.4 )
+rect_pivot_offset = Vector2( 12, 12 )
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KolVo" type="Label" parent="."]
+visible = false
+margin_left = 134.5
+margin_top = 967.5
+margin_right = 174.5
+margin_bottom = 1028.5
+custom_fonts/font = SubResource( 5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Patrons" type="Label" parent="." groups=["hide"]]
+anchor_left = 0.912833
+anchor_right = 1.0
+anchor_bottom = 0.147889
+margin_left = -0.640015
+margin_bottom = 0.279984
+custom_fonts/font = SubResource( 6 )
+text = "6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Wave" type="Label" parent="." groups=["hide"]]
+anchor_left = 0.817
+anchor_top = 0.889
+anchor_right = 0.978
+anchor_bottom = 0.969
+margin_left = -0.640137
+margin_top = -0.120117
+margin_right = -0.760254
+margin_bottom = -0.52002
+custom_fonts/font = SubResource( 6 )
+text = "Волна: 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ITEM_DESCRIPTION" type="Label" parent="Panel" groups=["INV"]]
+anchor_left = 0.05
+anchor_top = 0.8
+anchor_right = 0.644958
+anchor_bottom = 0.950037
+margin_right = -0.319946
+margin_bottom = -0.0400391
+mouse_filter = 1
+custom_fonts/font = SubResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.4
+anchor_top = 0.02
+anchor_right = 0.6
+anchor_bottom = 0.1
+margin_top = 0.239996
+margin_bottom = 24.2
+mouse_filter = 1
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 24 )
+text = "Инвентарь"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CRAFT" type="Control" parent="."]
+visible = false
+anchor_left = 0.062
+anchor_top = 0.074
+anchor_right = 0.929
+anchor_bottom = 0.896
+margin_left = 0.959991
+margin_top = 0.0800018
+margin_right = 0.319946
+margin_bottom = 0.319946
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Craft_btn" type="Button" parent="CRAFT"]
+anchor_left = 0.904
+anchor_top = 0.351
+anchor_right = 0.995
+anchor_bottom = 0.423
+margin_left = -0.255859
+margin_top = 0.311981
+margin_right = 0.32019
+margin_bottom = 0.376007
+custom_fonts/font = SubResource( 11 )
+text = "Craft"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="For_craft" type="GridContainer" parent="CRAFT"]
+anchor_left = 0.87
+anchor_top = 0.135
+anchor_right = 1.019
+anchor_bottom = 0.338
+margin_left = 0.319946
+margin_top = 0.119995
+margin_right = 0.383911
+margin_bottom = -0.144012
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DESCR" type="Label" parent="CRAFT"]
+anchor_left = 0.692
+anchor_top = 0.432901
+anchor_right = 1.06263
+anchor_bottom = 0.703063
+margin_left = 0.511841
+margin_top = -0.416016
+margin_right = -0.224243
+margin_bottom = -0.320068
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Описание"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="D_Anim" type="AnimationPlayer" parent="CRAFT/DESCR"]
+anims/little = SubResource( 14 )
+
+[node name="ITEMS_R" type="ItemList" parent="CRAFT"]
+anchor_left = 0.687
+anchor_top = 0.712
+anchor_right = 0.846
+anchor_bottom = 0.973
+margin_left = 0.832031
+margin_top = -0.255981
+margin_right = 0.255981
+margin_bottom = -0.0239868
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 15 )
+items = [ "Дошик - 2 штуки", ExtResource( 6 ), false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="craft_r_button" type="Button" parent="CRAFT"]
+anchor_left = 0.904
+anchor_top = 0.901
+anchor_right = 0.995
+anchor_bottom = 0.973
+margin_left = -0.255981
+margin_top = -0.0880127
+margin_right = 0.320068
+margin_bottom = -0.0240479
+custom_fonts/font = SubResource( 16 )
+text = "Craft"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TABS" type="HBoxContainer" parent="CRAFT"]
+anchor_left = 0.687
+anchor_top = 0.09
+anchor_right = 0.846
+anchor_bottom = 0.135
+margin_left = 0.831909
+margin_top = 0.0799942
+margin_right = 0.255981
+margin_bottom = 0.119995
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="weapon" type="Button" parent="CRAFT/TABS"]
+margin_right = 63.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+icon = ExtResource( 7 )
+
+[node name="artefacts" type="Button" parent="CRAFT/TABS"]
+margin_left = 67.0
+margin_right = 130.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+icon = ExtResource( 8 )
+
+[node name="defend" type="Button" parent="CRAFT/TABS"]
+margin_left = 134.0
+margin_right = 197.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+icon = ExtResource( 14 )
+
+[node name="base" type="Button" parent="CRAFT/TABS"]
+margin_left = 201.0
+margin_right = 264.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+icon = ExtResource( 10 )
+
+[node name="Weapons" type="ItemList" parent="CRAFT"]
+visible = false
+anchor_left = 0.687731
+anchor_top = 0.135
+anchor_right = 0.846
+anchor_bottom = 0.423
+margin_left = -0.384277
+margin_top = 0.119995
+margin_right = 0.255737
+margin_bottom = 0.376007
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 17 )
+items = [ "АК-47", ExtResource( 12 ), false, "Узи", ExtResource( 13 ), false, "Пистолет Пулемет", ExtResource( 9 ), false ]
+icon_scale = 0.6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Defend" type="ItemList" parent="CRAFT"]
+visible = false
+anchor_left = 0.688
+anchor_top = 0.135
+anchor_right = 0.846
+anchor_bottom = 0.423
+margin_left = -0.831909
+margin_top = 0.119995
+margin_right = 0.256226
+margin_bottom = 0.376007
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 18 )
+items = [ "Турель", null, false, "Забор", null, false, "Баррикада", null, false, "Стена", null, false, "ловушка", null, false ]
+
+[node name="Base" type="ItemList" parent="CRAFT"]
+visible = false
+anchor_left = 0.687
+anchor_top = 0.135
+anchor_right = 0.846
+anchor_bottom = 0.423
+margin_left = 0.831787
+margin_top = 0.119995
+margin_right = 0.255737
+margin_bottom = 0.376007
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 19 )
+items = [ "Кислородный баллон", null, false, "Починка капсулы", null, false, "Атмосферный магнит", null, false ]
+max_text_lines = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ITEMS" type="ItemList" parent="CRAFT"]
+visible = false
+anchor_left = 0.687
+anchor_top = 0.135
+anchor_right = 0.846
+anchor_bottom = 0.423
+margin_left = 0.831909
+margin_top = 2.423
+margin_right = 0.255981
+margin_bottom = 2.67892
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
+items = [ "Upgraded oxygen tank", null, false, "Броня", null, false, "МОДУЛЬ МАНЕВРЕНОСТИ", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="INV" type="GridContainer" parent="." groups=["INV"]]
+visible = false
+anchor_left = 0.0498125
+anchor_top = 0.156
+anchor_right = 0.949667
+anchor_bottom = 0.778111
+margin_left = -0.640007
+margin_top = -0.480011
+margin_right = 0.639893
+margin_bottom = -0.360046
+mouse_filter = 2
+columns = 10
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Pause" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_styles/panel = SubResource( 20 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="Pause"]
+anchor_left = 0.442
+anchor_top = 0.324
+anchor_right = 0.558
+anchor_bottom = 0.398
+margin_left = -0.640076
+margin_top = 0.0799866
+margin_right = 0.639893
+margin_bottom = 0.159973
+custom_fonts/font = SubResource( 21 )
+text = "Продолжить"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="to menu" type="Button" parent="Pause"]
+anchor_left = 0.448
+anchor_top = 0.417
+anchor_right = 0.552
+anchor_bottom = 0.491
+margin_left = -0.160034
+margin_top = -0.360016
+margin_right = 0.159912
+margin_bottom = -0.280029
+custom_fonts/font = SubResource( 22 )
+text = "В меню"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save and quit" type="Button" parent="Pause"]
+anchor_left = 0.431
+anchor_top = 0.504
+anchor_right = 0.567
+anchor_bottom = 0.578
+margin_left = -0.52002
+margin_top = -0.320007
+margin_right = 3.35999
+margin_bottom = -0.23999
+custom_fonts/font = SubResource( 23 )
+text = "???"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="TextureProgress" parent="." groups=["hide"]]
+anchor_left = 0.017
+anchor_top = 0.037
+anchor_right = 0.017
+anchor_bottom = 0.037
+margin_left = -0.640003
+margin_top = 0.0400009
+margin_right = 199.36
+margin_bottom = 30.04
+rect_scale = Vector2( 1.3, 1.3 )
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0.211765, 0.164706, 0.00392157, 1 )
+tint_progress = Color( 0.666667, 0.286275, 0.286275, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Oxygen" type="TextureProgress" parent="." groups=["hide"]]
+anchor_left = 0.017
+anchor_top = 0.097
+anchor_right = 0.017
+anchor_bottom = 0.097
+margin_left = -0.640003
+margin_top = -0.414604
+margin_right = 199.36
+margin_bottom = 29.5854
+max_value = 36.0
+value = 18.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0.211765, 0.164706, 0.00392157, 1 )
+tint_over = Color( 0.647059, 0.847059, 0.478431, 1 )
+tint_progress = Color( 0.533333, 0.72549, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SwitchBtnLeft" type="Button" parent="."]
+visible = false
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SwitchBtnRight" type="Button" parent="."]
+visible = false
+anchor_left = 0.617
+anchor_top = 0.017
+anchor_right = 0.679
+anchor_bottom = 0.12
+margin_left = -0.640137
+margin_top = -0.360001
+margin_right = 0.319946
+margin_bottom = 0.399994
+focus_mode = 0
+custom_fonts/font = SubResource( 26 )
+text = ">"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CRAFT/Craft_btn" to="." method="_on_Craft_btn_pressed"]
+[connection signal="item_selected" from="CRAFT/ITEMS_R" to="." method="_on_ITEMS_R_item_selected"]
+[connection signal="pressed" from="CRAFT/craft_r_button" to="." method="_on_craft_r_button_pressed"]
+[connection signal="pressed" from="CRAFT/TABS/weapon" to="." method="_on_weapon_pressed"]
+[connection signal="pressed" from="CRAFT/TABS/artefacts" to="." method="_on_artefacts_pressed"]
+[connection signal="pressed" from="CRAFT/TABS/defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="CRAFT/TABS/base" to="." method="_on_base_pressed"]
+[connection signal="item_selected" from="CRAFT/Weapons" to="." method="_on_Weapons_item_selected"]
+[connection signal="item_selected" from="CRAFT/Defend" to="." method="_on_Defend_item_selected"]
+[connection signal="item_selected" from="CRAFT/Base" to="." method="_on_Base_item_selected"]
+[connection signal="item_selected" from="CRAFT/ITEMS" to="." method="_on_ITEMS_item_selected"]
+[connection signal="pressed" from="Pause/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/to menu" to="." method="_on_to_menu_pressed"]
+[connection signal="pressed" from="Pause/to menu" to="Pause" method="_on_to_menu_pressed"]
+[connection signal="pressed" from="Pause/save and quit" to="." method="_on_save_and_quit_pressed"]
+[connection signal="pressed" from="Pause/save and quit" to="Pause" method="_on_save_and_quit_pressed"]

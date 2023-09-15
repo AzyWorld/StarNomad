@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/OXYGEN_TANK_B.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.6667, 40 )
+
+[node name="OXYGEN_TANK_B" type="Area2D" groups=[
+"o_blueprint",
+]]
+scale = Vector2( 0.4, 0.6 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 1, 0.0392157, 1 )
+polygon = PoolVector2Array( -11.9271, 40.0313, 12.0833, 40, 12.0052, 37.4844, 19.974, 37.5, 20, 35, 23.9583, 35, 23.9741, -15.0157, 20.004, -15.0157, 20.004, -17.5158, 15.9683, -17.4961, 15.9683, -22.4768, 11.9655, -22.5161, 12.0313, -24.9844, 7.99479, -25.0313, 8.02083, -27.4844, 32.0052, -27.5, 32.0313, -34.9688, 7.99479, -35.0313, 8.04688, -37.5, -7.99479, -37.5156, -7.96875, -35, -16.0156, -34.9844, -16.0156, -27.4844, -7.99479, -27.4844, -7.99479, -24.9844, -12.0052, -25, -11.9792, -22.4844, -16.0156, -22.5, -15.9635, -17.5, -20.026, -17.5, -20, -15, -24.0365, -14.9844, -23.9583, 35.0156, -20.026, 35, -20.0521, 37.5, -12.0052, 37.5156 )
+[connection signal="area_entered" from="." to="." method="_on_OXYGEN_TANK_B_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_OXYGEN_TANK_B_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_OXYGEN_TANK_B_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_OXYGEN_TANK_B_body_exited"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/help.gd" type="Script" id=2]
+[ext_resource path="res://sprites/GUI/Theme/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://sprites/GUI/Backs/BG1.png" type="Texture" id=4]
+[ext_resource path="res://fonts/StarseedPro.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 5 )
+
+[node name="help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchor_right = 0.854
+anchor_bottom = 1.0
+margin_right = 0.319946
+grow_vertical = 0
+theme = ExtResource( 3 )
+custom_constants/line_separation = 0
+custom_fonts/normal_font = SubResource( 1 )
+text = "Текст ниже рекомендуется к прочтению для понимания основ игры.
+Ты приземлился на чужой планете!
+Тебя поджидают монстры и опасности,
+от которых придется спасаться.
+-----------------------------------------------
+Передвижение - WASD
+Стрельба/Использование предмета - ЛКМ
+Перезарядка - R
+Перезарядить кислород - E
+Открыть инвентарь - TAB
+Переключение слотов в хотбаре - Колесико мыши
+и боковые кнопки мыши
+Вкл/Выкл выравнивание по сетке - V
+Перетащить турель, стену и тд - Q, ПКМ
+Изменение позиции предмета в хотбаре - 
+CTRL + Колесико мыши/боковые кнопки мыши
+Бег - SHIFT
+Пауза - ESC
+-------------------------------------------------
+Итак, базовые механики:
+- Кислород заканчивается, полоска под полоской жизни, восполнять рядом с капсулой
+- Когда кислород закончится, ты начнешь терять жизни
+- При смерти персонажа ты проигрываешь
+- Крафт предметов осуществляется посредством открытия инвентаря рядом с капсулой
+- Понять, что делает предмет можно по его описанию снизу
+- Враги атакуют волнами
+- С врага с каким-то шансом может выпасть лут, из которого крафтятся вещи
+- После каждой волны прилетает обломок корбаля, в виде лута
+- Любые враги умерают от одной пули
+- Чтобы пользоватся оружием надо перезаряжаться
+- Аптечки бесплатно крафтятся, и восстанавливают жизни
+- Можно скрафтить улучшения для персонажа
+- Можно скрафтить оборонительные штуки:
+Турели, ловушки, стены
+- Можно крафтить штуки для базы
+- Можно крафтить оружие
+
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+anchor_left = 0.866333
+anchor_top = 0.022
+anchor_right = 0.987333
+anchor_bottom = 0.096
+margin_left = 0.639893
+margin_top = 0.24
+margin_right = 0.319946
+margin_bottom = 0.32
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+text = "Вернуться"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}

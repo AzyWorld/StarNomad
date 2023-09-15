@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://fonts/19783.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/GAME OVER.gd" type="Script" id=2]
+[ext_resource path="res://sprites/GUI/Backs/BG1.png" type="Texture" id=3]
+[ext_resource path="res://fonts/StarseedPro.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/GUI/Theme/MainTheme.tres" type="Theme" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 250
+outline_color = Color( 1, 0.635294, 0.635294, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[node name="GAME OVER" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.074
+anchor_right = 1.0
+anchor_bottom = 0.353
+margin_top = -20.92
+margin_bottom = -21.24
+custom_colors/font_color = Color( 1, 0.819608, 0.819608, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ВЫ УМЕРЛИ"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_top = 0.595852
+anchor_right = 1.0
+anchor_bottom = 0.99263
+margin_top = -0.520081
+margin_bottom = -0.0400391
+custom_colors/font_color = Color( 1, 0.866667, 0.866667, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "ВАШ РЕЗУЛЬТАТ: "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="restart" type="Button" parent="."]
+anchor_left = 0.446
+anchor_top = 0.385
+anchor_right = 0.55
+anchor_bottom = 0.455
+margin_left = -0.320007
+margin_top = 0.199982
+margin_bottom = -0.400024
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.611765, 0.611765, 1 )
+custom_colors/font_color_pressed = Color( 0.686275, 0.235294, 0.235294, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Заново"
+
+[node name="to_menu" type="Button" parent="."]
+anchor_left = 0.446
+anchor_top = 0.5
+anchor_right = 0.55
+anchor_bottom = 0.566
+margin_left = -0.320007
+margin_top = -4.0
+margin_bottom = -0.280029
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.576471, 0.576471, 1 )
+custom_colors/font_color_pressed = Color( 0.74902, 0.243137, 0.243137, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "В меню"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="to_menu" to="." method="_on_to_menu_pressed"]

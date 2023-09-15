@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/wall.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.94865, 31.967 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.10493, 32.1841 )
+
+[node name="wall" type="StaticBody2D" groups=[
+"grab",
+"prioritet",
+"target",
+]]
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 1.90735e-06, 0 )
+scale = Vector2( 0.5, 1 )
+polygon = PoolVector2Array( -8, 32, -8, -32, 8, -32, 8, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"coll",
+]]
+shape = SubResource( 1 )
+
+[node name="without_tur" type="Area2D" parent="." groups=[
+"without1",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="without_tur"]
+shape = SubResource( 2 )
